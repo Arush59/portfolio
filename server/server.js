@@ -14,10 +14,12 @@ const app = express();
 // Secure CORS
 const corsOptions = {
     origin: (origin, callback) => {
-        const allowedOrigins = process.env.FRONTEND_URL 
-            ? [process.env.FRONTEND_URL, 'http://localhost:5173'] 
+        const envFrontendUrl = process.env.FRONTEND_URL ? process.env.FRONTEND_URL.replace(/\/$/, '') : null;
+        const allowedOrigins = envFrontendUrl 
+            ? [envFrontendUrl, 'http://localhost:5173'] 
             : ['http://localhost:5173'];
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        
+        if (!origin || allowedOrigins.includes(origin) || allowedOrigins.includes(origin.replace(/\/$/, ''))) {
             callback(null, true);
         } else {
             callback(new Error('Strict CORS Policy Error: Not allowed by CORS'));
