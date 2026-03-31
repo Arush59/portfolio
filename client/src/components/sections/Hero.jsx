@@ -199,7 +199,7 @@ const Hero = () => {
                   <a href="#contact" className="terminal-btn">
                     contact_me
                   </a>
-                  <a href="https://drive.google.com/file/d/1L0uJ-tG3eEfeyPYbCmolLQBICMGSVxjv/view" target="_blank" rel="noreferrer" className="terminal-btn">
+                  <a href="https://drive.google.com/file/d/1w9FDZFDk16iVFp72CINjqfE7IBJij1Cl/view" target="_blank" rel="noreferrer" className="terminal-btn">
                     download_cv
                   </a>
                 </motion.div>
